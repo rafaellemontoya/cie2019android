@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/colorAccent"
+        tools:ignore="MissingConstraints">
+        <TextView
+            android:id="@+id/dia_seleccionado_tv"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="Lunes"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/blanco"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/contenido_dia_seleccionado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"></ListView>
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

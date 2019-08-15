@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/imagen_ponente"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/ponente1"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="3"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:id="@+id/nombre_conferencia"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:gravity=""
+                android:padding="20dp"
+                android:text="nombre_conferencia"
+                android:textColor="@color/titulo_conferencias"
+                android:textSize="16dp"
+                android:lines="3"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/nombre_ponente"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="nombre ponente"
+                android:layout_weight="1"
+                android:textColor="@color/negro"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:gravity=""/>
+            <TextView
+                android:id="@+id/fecha"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="fecha"
+                android:layout_weight="1"
+                android:textColor="@color/negro"
+                android:textSize="12dp"
+                android:layout_marginLeft="20dp"
+                android:gravity=""/>
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

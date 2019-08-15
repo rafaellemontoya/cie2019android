@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#feb505</color>
+    <color name="colorPrimaryDark">#da9b04</color>
+    <color name="colorAccent">#4f9cdb</color>
+    <color name="letra">#D81B60</color>
+    <color name="negro">#000000</color>
+    <color name="blanco">#fff</color>
+    <color name="titulo_conferencias">#4f9cdb</color>
+    <color name="subtitulo_conferencias">#2d2e2e</color>
+    <color name="azul_academia">#004e9a</color>
+    <color name="verde_academia">#1B5E20</color>
+</resources>

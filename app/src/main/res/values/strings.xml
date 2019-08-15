@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">CIE2019</string>
+    <string name="title_home">Inicio</string>
+    <string name="title_programa">Programa</string>
+    <string name="title_patrocinadores">Patrocinadores</string>
+    <string name="title_ubicacion">Ubicación</string>
+    <string name="title_magistrales">Ponencias Magistrales</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+</resources>
