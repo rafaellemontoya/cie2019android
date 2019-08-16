@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/colorAccent"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        android:id="@+id/layout_color_dia_seleccionado">
         <TextView
             android:id="@+id/dia_seleccionado_tv"
             android:layout_width="match_parent"

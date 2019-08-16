@@ -1,6 +1,7 @@
 package com.myt.cie2019.Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,12 @@ import static com.myt.cie2019.R.drawable.lunes;
 public class ProgramaDiaSeleccionadoAdapter extends ArrayAdapter {
     private Context context;
     private ArrayList<Ponencia> datos;
+    private int colorTitulo;
 
 
-    public ProgramaDiaSeleccionadoAdapter(Context context, ArrayList datos){
+    public ProgramaDiaSeleccionadoAdapter(Context context, ArrayList datos, int color){
         super(context, R.layout.renglon_dia_seleccionado, datos);
-
+    this.colorTitulo = color;
         this.context = context;
         this.datos = datos;
     }
@@ -39,6 +41,7 @@ public class ProgramaDiaSeleccionadoAdapter extends ArrayAdapter {
         TextView horaConferencia = (TextView) item.findViewById(R.id.hora_ponencia);
         horaConferencia.setText("09:00-10:00");
         TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_conferencia_dia);
+        nombreConferencia.setTextColor(colorTitulo);
         nombreConferencia.setText(datos.get(position).getNombrePonencia());
         TextView nombrePonente = (TextView) item.findViewById(R.id.nombre_ponente_dia);
         nombrePonente.setText(datos.get(position).getNombrePonente());

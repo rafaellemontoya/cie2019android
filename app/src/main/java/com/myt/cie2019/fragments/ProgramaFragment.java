@@ -39,11 +39,11 @@ public class ProgramaFragment extends Fragment {
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
 
-        alInfo.add(new Fecha("Lunes", new Date(2019, 10,9)));
-        alInfo.add(new Fecha("Martes", new Date(2019, 10,10)));
-        alInfo.add(new Fecha("Miércoles", new Date(2019, 10,11)));
-        alInfo.add(new Fecha("Jueves", new Date(2019, 10,12)));
-        alInfo.add(new Fecha("Viernes", new Date(2019, 10,13)));
+        alInfo.add(new Fecha("Lunes", new Date(2019, 10,9),1));
+        alInfo.add(new Fecha("Martes", new Date(2019, 10,10),2));
+        alInfo.add(new Fecha("Miércoles", new Date(2019, 10,11),3));
+        alInfo.add(new Fecha("Jueves", new Date(2019, 10,12),4));
+        alInfo.add(new Fecha("Viernes", new Date(2019, 10,13),5));
 
         adapter = new ProgramaDiasAdapter(rootView.getContext(), alInfo);
         lista.setAdapter(adapter);

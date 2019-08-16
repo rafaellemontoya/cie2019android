@@ -33,19 +33,19 @@ public class ProgramaDiasAdapter extends ArrayAdapter {
 
         if(position == 0){
 
-            item.setBackgroundResource(R.color.azul_academia);
+            item.setBackgroundResource(R.color.lunes);
         }else if(position == 1){
 
-            item.setBackgroundResource(R.color.verde_academia);
+            item.setBackgroundResource(R.color.martes);
         }else if(position == 2){
 
-            item.setBackgroundResource(R.color.azul_academia);
+            item.setBackgroundResource(R.color.miercoles);
         }else if(position == 3){
 
-            item.setBackgroundResource(R.color.verde_academia);
+            item.setBackgroundResource(R.color.jueves);
         }else if(position == 4){
 
-            item.setBackgroundResource(R.color.azul_academia);
+            item.setBackgroundResource(R.color.viernes);
         }
 
         TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_dia_tv);

@@ -10,4 +10,9 @@
     <color name="subtitulo_conferencias">#2d2e2e</color>
     <color name="azul_academia">#004e9a</color>
     <color name="verde_academia">#1B5E20</color>
+    <color name="lunes">#478ccd</color>
+    <color name="martes">#6e32a0</color>
+    <color name="miercoles">#e86e19</color>
+    <color name="jueves">#f5c000</color>
+    <color name="viernes">#6db03f</color>
 </resources>
