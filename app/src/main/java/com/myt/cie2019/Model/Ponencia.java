@@ -1,17 +1,23 @@
 package com.myt.cie2019.Model;
 
+import com.google.firebase.Timestamp;
+
 import java.util.Date;
 
 public class Ponencia {
-    private String nombrePonente, nombrePonencia, sala;
-    private Date fechaPonencia, horaPonencia;
+    private String nombrePonente, nombrePonencia, sala,id;
+    private Timestamp fechaPonencia;
 
-    public Ponencia(String nombrePonente, String nombrePonencia, String sala, Date fechaPonencia, Date horaPonencia) {
+    public Ponencia() {
+    }
+
+    public Ponencia(String nombrePonente, String nombrePonencia, String sala, Timestamp fechaPonencia, String id) {
         this.nombrePonente = nombrePonente;
         this.nombrePonencia = nombrePonencia;
         this.sala = sala;
         this.fechaPonencia = fechaPonencia;
-        this.horaPonencia = horaPonencia;
+        this.id = id;
+
     }
 
     public String getNombrePonente() {
@@ -38,19 +44,19 @@ public class Ponencia {
         this.sala = sala;
     }
 
-    public Date getFechaPonencia() {
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Timestamp getFechaPonencia() {
         return fechaPonencia;
     }
 
-    public void setFechaPonencia(Date fechaPonencia) {
+    public void setFechaPonencia(Timestamp fechaPonencia) {
         this.fechaPonencia = fechaPonencia;
-    }
-
-    public Date getHoraPonencia() {
-        return horaPonencia;
-    }
-
-    public void setHoraPonencia(Date horaPonencia) {
-        this.horaPonencia = horaPonencia;
     }
 }

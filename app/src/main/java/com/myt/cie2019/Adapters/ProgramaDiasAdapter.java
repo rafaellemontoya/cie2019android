@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
 import com.myt.cie2019.Model.Fecha;
 import com.myt.cie2019.Model.PonenciaMagistral;
 import com.myt.cie2019.R;
@@ -33,19 +33,19 @@ public class ProgramaDiasAdapter extends ArrayAdapter {
 
         if(position == 0){
 
-            item.setBackgroundResource(R.color.lunes);
+            item.setBackgroundResource(R.drawable.background_lunes);
         }else if(position == 1){
 
-            item.setBackgroundResource(R.color.martes);
+            item.setBackgroundResource(R.drawable.background_martes);
         }else if(position == 2){
 
-            item.setBackgroundResource(R.color.miercoles);
+            item.setBackgroundResource(R.drawable.background_miercoles);
         }else if(position == 3){
 
-            item.setBackgroundResource(R.color.jueves);
+            item.setBackgroundResource(R.drawable.background_jueves);
         }else if(position == 4){
 
-            item.setBackgroundResource(R.color.viernes);
+            item.setBackgroundResource(R.drawable.background_viernes);
         }
 
         TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_dia_tv);

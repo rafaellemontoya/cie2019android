@@ -1,19 +1,28 @@
 package com.myt.cie2019.fragments;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.myt.cie2019.Adapters.PoneneciasMagistralesAdapter;
+import com.myt.cie2019.Interfaces.IfFirebaseLoadDone;
 import com.myt.cie2019.Model.PonenciaMagistral;
 import com.myt.cie2019.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class PonenciasMagistralesFragment extends Fragment {
+public class PonenciasMagistralesFragment extends Fragment implements IfFirebaseLoadDone {
 
     View rootView;
     ListView lista;
@@ -31,17 +40,35 @@ public class PonenciasMagistralesFragment extends Fragment {
 
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
+        //Init DB
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-        alInfo.add(new PonenciaMagistral("Recent developments in Linear concentration for CSP plants with storage", "Dr. Manuel Pedro Ivens Collares-Pereira", "Miércoles 11, 9:00-10:00"));
-        alInfo.add(new PonenciaMagistral("Los Retos a mediano y largo plazo de las Energías Limpias, Energía Hidroeléctrica", "Dr. Humberto Marengo Mogollón", "Miércoles 11, 10:00-11:00"));
-        alInfo.add(new PonenciaMagistral("Towards the development of new materials, novel process designs and optimal operation for Chemical Looping Combustion: A Process Systems Engineering Perspective", "Dr. Luis Ricardez-Sandoval", "Jueves 12, 9:00- 10:00"));
-        alInfo.add(new PonenciaMagistral("Modelos de planeación", "Dra. Cecilia Martín del Campo Márquez", "Jueves 12, 10:00- 11:00"));
-        alInfo.add(new PonenciaMagistral("ALMACENAMIENTO DE ENERGÍA: DISEÑO, CONSTRUCCIÓN Y ENSAMBLAJE DE BATERÍAS DE IONES ALCALINOS", "Dr. Ignacio González Martínez", "Viernes 13, 9:00- 10:00"));
-        alInfo.add(new PonenciaMagistral("PANORAMA DE APLICACIONES DE LA ENERGÍA SOLAR CONCENTRADA", "Dr. Camilo Arancibia Bulnes", "Viernes 13, 10:00- 11:00"));
-        alInfo.add(new PonenciaMagistral("", "", ""));
+        db.collection("ponenciasmagistrales")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                        if (task.isSuccessful()) {
+                            for (QueryDocumentSnapshot document : task.getResult()) {
+                                Log.d("hola2", document.getId() + " => " + document.getData());
+
+                                alInfo.add(new PonenciaMagistral(document.getString("nombreConferencia"), document.getString("ponente"), document.getString("foto"),document.getString("fecha")));
+                            }
+                            onFirebaseLoadSuccess();
+                        } else {
+                            Log.w("ERROR", "Error getting documents.", task.getException());
+                        }
+                    }
+                });
 
         adapter = new PoneneciasMagistralesAdapter(rootView.getContext(), alInfo);
         lista.setAdapter(adapter);
         return rootView;
+    }
+
+    @Override
+    public void onFirebaseLoadSuccess() {
+        adapter.notifyDataSetChanged();
     }
 }

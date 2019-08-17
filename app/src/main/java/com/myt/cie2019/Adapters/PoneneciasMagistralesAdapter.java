@@ -8,9 +8,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
 import com.myt.cie2019.Model.PonenciaMagistral;
 import com.myt.cie2019.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -32,17 +33,16 @@ public class PoneneciasMagistralesAdapter extends ArrayAdapter {
 
         ImageView imagen = (ImageView) item.findViewById(R.id.imagen_ponente);
 
-        Glide.with(context).load(datos.get(position).getFoto()).into(imagen);
 
-        Glide.with(context)
-                .load("https://i2.wp.com/www.siasat.com/wp-content/uploads/2018/03/Rosamund-Pike.jpeg?fit=600%2C421&ssl=1")
-                .into(imagen);
+
+        Picasso.get().load(datos.get(position).getFoto()).into(imagen);
+
 
         TextView fechaConferencia = (TextView) item.findViewById(R.id.fecha);
-        fechaConferencia.setText(datos.get(position).getFoto());
-        TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_conferencia);
+        fechaConferencia.setText(datos.get(position).getFecha());
+        TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_ponente);
         nombreConferencia.setText(datos.get(position).getNombrePonencia());
-        TextView nombrePonente = (TextView) item.findViewById(R.id.nombre_ponente);
+        TextView nombrePonente = (TextView) item.findViewById(R.id.nombre_conferencia);
         nombrePonente.setText(datos.get(position).getNombrePonente());
 
         return item;

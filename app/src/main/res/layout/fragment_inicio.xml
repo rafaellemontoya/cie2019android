@@ -4,21 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_container">
+    android:id="@+id/fragment_container"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+       >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CIE 2019"
+            android:text="Avisos"
             android:textSize="40dp"
-            android:textColor="@color/colorPrimaryDark"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/titulo_conferencias"
             android:gravity="center"
             android:layout_gravity="center"/>
+
+        <ListView
+            android:id="@+id/lista_inicio"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            ></ListView>
 
     </LinearLayout>
 

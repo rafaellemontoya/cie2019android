@@ -1,6 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ubicación"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/lunes"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:layout_margin="20dp"
+
+                android:text="El CIE 2019 se llevará a Cabo en Centro Cultural UniversitarioUniversidad Michoacana de San Nicolás de Hidalgo.\n\nUbicado en el Centro de la hermosa Ciudad de Morelia, en el Estado de Michoacán.\n\nDirección: Av. Francisco I. Madero Pte. # 350, Centro Histórico, C.P: 58000, Morelia, Mich.\n\nEl Centro Cultural Universitario es un foro con 20 años de funcionamiento, creado con el propósito de apoyar las actividades de difusión y divulgación científica, académica y cultural."/>
+
+
+
+            <Button
+                android:id="@+id/btn_liga"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/background_lunes"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:layout_gravity="center"
+                android:text="Llévame"
+                android:textColor="@color/blanco"
+                />
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
 
 </android.support.constraint.ConstraintLayout>
