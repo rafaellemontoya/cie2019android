@@ -1,5 +1,7 @@
 package com.myt.cie2019.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -7,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -61,6 +64,14 @@ public class PatrocinadoresFragment extends Fragment implements IfFirebaseLoadDo
                 });
 
         adapter = new PatrocinadoresAdapter(rootView.getContext(), alInfo);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uri uri = Uri.parse(alInfo.get(i).getUrlPagina());
+                Intent intentayuda = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentayuda);
+            }
+        });
         lista.setAdapter(adapter);
         return rootView;
     }

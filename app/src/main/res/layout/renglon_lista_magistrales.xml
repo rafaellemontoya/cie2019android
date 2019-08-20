@@ -13,6 +13,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:src="@drawable/ponente1"
+            android:layout_gravity="center"
+
             />
 
         <LinearLayout
@@ -33,7 +35,7 @@
                 android:textColor="@color/titulo_conferencias"
                 android:textSize="20dp"
                 android:lines="3"
-                android:textStyle="bold" />
+                android:fontFamily="@font/quicksand_bold" />
             <TextView
                 android:id="@+id/nombre_ponente"
                 android:layout_width="match_parent"
@@ -41,20 +43,33 @@
                 android:text="nombre ponente"
                 android:layout_weight="3"
                 android:lines="3"
-                android:textAppearance="@color/subtitulo_conferencias"
-                android:textColor="@color/negro"
+
+                android:textColor="@color/subtitulo_conferencias"
                 android:textSize="16dp"
                 android:layout_marginLeft="20dp"
-                android:gravity=""/>
+                android:fontFamily="@font/quicksand_regular"/>
             <TextView
                 android:id="@+id/fecha"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:text="fecha"
                 android:layout_weight="1"
-                android:textColor="@color/lunes"
+                android:textColor="@color/subtitulo_conferencias"
                 android:textSize="14dp"
                 android:layout_marginLeft="20dp"
+                android:fontFamily="@font/quicksand_semi_bold"
+                />
+
+            <TextView
+                android:id="@+id/sala_magistral"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="fecha"
+                android:layout_weight="1"
+                android:textColor="@color/subtitulo_conferencias"
+                android:textSize="14dp"
+                android:layout_marginLeft="20dp"
+                android:fontFamily="@font/quicksand_semi_bold"
                 />
         </LinearLayout>
 

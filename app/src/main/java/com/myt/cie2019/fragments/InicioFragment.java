@@ -1,5 +1,7 @@
 package com.myt.cie2019.fragments;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
@@ -7,6 +9,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -36,6 +40,16 @@ public class InicioFragment extends Fragment  implements IfFirebaseLoadDone {
 
         lista = rootView.findViewById(R.id.lista_inicio);
 
+        Button botonLibroResumenes = rootView.findViewById(R.id.descargar_libro_resumenes);
+
+        botonLibroResumenes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://amexen.org/iec/2019/docs/libro_resumenes_cie19.pdf");
+                Intent intentayuda = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentayuda);
+            }
+        });
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
         //Init DB
@@ -65,6 +79,16 @@ public class InicioFragment extends Fragment  implements IfFirebaseLoadDone {
                 });
 
         adapter = new InicioAdapter(rootView.getContext(), alInfo);
+
+
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Uri uri = Uri.parse(alInfo.get(i).getLink());
+                Intent intentayuda = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentayuda);
+            }
+        });
         lista.setAdapter(adapter);
         return rootView;
     }

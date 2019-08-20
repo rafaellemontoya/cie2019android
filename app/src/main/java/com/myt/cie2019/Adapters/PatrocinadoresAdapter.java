@@ -39,8 +39,7 @@ public class PatrocinadoresAdapter extends ArrayAdapter {
 
         Picasso.get().load(datos.get(position).getUrlFoto()).into(imagen);
 
-        TextView nombre = (TextView) item.findViewById(R.id.nombre_patrocinador);
-        nombre.setText(datos.get(position).getNombre());
+
 
 
         return item;

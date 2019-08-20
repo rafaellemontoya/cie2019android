@@ -42,8 +42,12 @@ public class PoneneciasMagistralesAdapter extends ArrayAdapter {
         fechaConferencia.setText(datos.get(position).getFecha());
         TextView nombreConferencia = (TextView) item.findViewById(R.id.nombre_ponente);
         nombreConferencia.setText(datos.get(position).getNombrePonencia());
+
         TextView nombrePonente = (TextView) item.findViewById(R.id.nombre_conferencia);
         nombrePonente.setText(datos.get(position).getNombrePonente());
+
+        TextView sala = (TextView) item.findViewById(R.id.sala_magistral);
+        sala.setText(datos.get(position).getSala());
 
         return item;
 

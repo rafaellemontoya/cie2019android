@@ -1,6 +1,7 @@
 package com.myt.cie2019.fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import com.myt.cie2019.Adapters.PoneneciasMagistralesAdapter;
@@ -27,23 +29,36 @@ public class ProgramaFragment extends Fragment {
     ProgramaDiasAdapter adapter;
     ArrayList<Fecha> alInfo ;
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        rootView = inflater.inflate(R.layout.fragment_ponencias_magistrales
+        rootView = inflater.inflate(R.layout.fragment_programa
                 , container, false);
 
-        lista = rootView.findViewById(R.id.lista_ponentes);
+        Button botonDescarga = rootView.findViewById(R.id.descargar_programa);
+        botonDescarga.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://amexen.org/iec/2019/docs/programa_cie19.pdf");
+                Intent intentayuda = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intentayuda);
+            }
+        });
+
+        lista = rootView.findViewById(R.id.contenido);
+
 
         //Lleno la informacion de base de datos
         alInfo = new ArrayList();
 
-        alInfo.add(new Fecha("Lunes", new Date(2019, 10,9),1));
-        alInfo.add(new Fecha("Martes", new Date(2019, 10,10),2));
-        alInfo.add(new Fecha("Miércoles", new Date(2019, 10,11),3));
-        alInfo.add(new Fecha("Jueves", new Date(2019, 10,12),4));
-        alInfo.add(new Fecha("Viernes", new Date(2019, 10,13),5));
+        alInfo.add(new Fecha("Lunes \n 9 de septiembre", new Date(2019, 10,9),1));
+        alInfo.add(new Fecha("Martes\n 10 de septiembre", new Date(2019, 10,10),2));
+        alInfo.add(new Fecha("Miércoles\n 11 de septiembre", new Date(2019, 10,11),3));
+        alInfo.add(new Fecha("Jueves\n 12 de septiembre", new Date(2019, 10,12),4));
+        alInfo.add(new Fecha("Viernes\n 13 de septiembre", new Date(2019, 10,13),5));
+
 
         adapter = new ProgramaDiasAdapter(rootView.getContext(), alInfo);
         lista.setAdapter(adapter);

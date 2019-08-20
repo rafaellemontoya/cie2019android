@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/fragment_container"
+    android:orientation="vertical"
     >
 
     <LinearLayout
@@ -12,7 +13,32 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         tools:ignore="MissingConstraints"
+
        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Libro de resúmenes"
+            android:textSize="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/titulo_conferencias"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:fontFamily="@font/quicksand_bold"/>
+
+        <Button
+            android:id="@+id/descargar_libro_resumenes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Descargar"
+            android:textColor="@color/blanco"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/background_lunes"
+            />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -22,12 +48,14 @@
             android:layout_marginBottom="20dp"
             android:textColor="@color/titulo_conferencias"
             android:gravity="center"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:fontFamily="@font/quicksand_bold"/>
 
         <ListView
             android:id="@+id/lista_inicio"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
             ></ListView>
 
     </LinearLayout>

@@ -130,7 +130,7 @@ public class ProgramaActivity  extends AppCompatActivity implements IfFirebaseLo
 
 
         db.collection("programa")
-                .orderBy("fechaPonencia").startAt(dateInicio).endAt(dateFin)
+                .orderBy("fecha").startAt(dateInicio).endAt(dateFin)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -147,8 +147,8 @@ public class ProgramaActivity  extends AppCompatActivity implements IfFirebaseLo
                                 alInfo.add(new Ponencia(document.getString("nombrePonente"),
                                         document.getString("nombrePonencia"),
                                         document.getString("sala"),
-                                        document.getTimestamp("fechaPonencia"),
-                                        document.getString("idPonencia")));
+                                        document.getTimestamp("fecha"),
+                                        document.getString("ponenciaid")));
                             }else{
                                 ponencia.setNombrePonencia(document.getString("nombrePonencia"));
                                 ponencia.setNombrePonente("");

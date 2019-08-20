@@ -1,13 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Programa"
+        android:textSize="40dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/titulo_conferencias"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:fontFamily="@font/quicksand_bold"/>
+
+    <Button
+        android:id="@+id/descargar_programa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descargar"
+        android:textColor="@color/blanco"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:background="@drawable/background_lunes"
+        android:layout_marginBottom="20dp"
+        />
+
     <ListView
         android:id="@+id/contenido"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:ignore="MissingConstraints"></ListView>
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints"
+        android:layout_marginBottom="50dp"></ListView>
 
-</android.support.constraint.ConstraintLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -9,8 +9,8 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/azul_academia"
-            android:textColor="@color/blanco"
+            android:fontFamily="@font/quicksand_bold"
+            android:textColor="@color/lunes"
             android:gravity="center"
             android:text="Nuestros patrocinadores"
             android:paddingTop="30dp"
@@ -20,7 +20,8 @@
         <ListView
             android:id="@+id/lista_patrocinadores"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp">
 
         </ListView>
     </LinearLayout>

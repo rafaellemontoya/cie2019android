@@ -1,14 +1,15 @@
 package com.myt.cie2019.Model;
 
 public class PonenciaMagistral {
-    private String nombrePonencia, nombrePonente, foto, fecha;
+    private String nombrePonencia, nombrePonente, foto, fecha, sala;
 
 
-    public PonenciaMagistral(String nombrePonencia, String nombrePonente, String foto, String fecha) {
+    public PonenciaMagistral(String nombrePonencia, String nombrePonente, String foto, String fecha, String sala) {
         this.nombrePonencia = nombrePonencia;
         this.nombrePonente = nombrePonente;
         this.foto = foto;
         this.fecha = fecha;
+        this.sala = sala;
     }
 
     public String getNombrePonencia() {
@@ -41,5 +42,13 @@ public class PonenciaMagistral {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public String getSala() {
+        return sala;
+    }
+
+    public void setSala(String sala) {
+        this.sala = sala;
     }
 }

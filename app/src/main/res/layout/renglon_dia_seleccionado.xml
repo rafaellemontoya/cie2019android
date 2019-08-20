@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,46 +15,58 @@
             android:textSize="16dp"
             android:layout_gravity="center"
             android:gravity="center"
+            android:fontFamily="@font/quicksand_semi_bold"
             />
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="100dp"
-            android:layout_weight="3"
+            android:layout_height="wrap_content"
+            android:layout_weight="4"
             android:orientation="vertical"
             >
 
             <TextView
                 android:id="@+id/nombre_conferencia_dia"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_height="wrap_content"
+
                 android:gravity=""
-                android:padding="10dp"
+                android:padding="0dp"
                 android:text="nombre_conferencia"
                 android:textColor="@color/titulo_conferencias"
                 android:textSize="18dp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/quicksand_bold" />
             <TextView
                 android:id="@+id/nombre_ponente_dia"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:text="nombre ponente"
-                android:layout_weight="1"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/subtitulo_conferencias"
                 android:textSize="16dp"
-                android:layout_marginLeft="20dp"
-                android:gravity=""/>
+
+                android:fontFamily="@font/quicksand_regular"/>
             <TextView
                 android:id="@+id/sala_dia"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:text="fecha"
-                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="Sala María Telkes"
+                android:layout_marginTop="5dp"
                 android:textColor="@color/subtitulo_conferencias"
                 android:textSize="14dp"
-                android:layout_marginLeft="20dp"
-                android:gravity=""/>
+
+                android:fontFamily="@font/quicksand_semi_bold"/>
+            <TextView
+                android:id="@+id/id_dia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sala María Telkes"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/subtitulo_conferencias"
+                android:textSize="14dp"
+
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/quicksand_semi_bold"/>
         </LinearLayout>
 
     </LinearLayout>

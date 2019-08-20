@@ -53,7 +53,7 @@ public class PonenciasMagistralesFragment extends Fragment implements IfFirebase
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Log.d("hola2", document.getId() + " => " + document.getData());
 
-                                alInfo.add(new PonenciaMagistral(document.getString("nombreConferencia"), document.getString("ponente"), document.getString("foto"),document.getString("fecha")));
+                                alInfo.add(new PonenciaMagistral(document.getString("nombreConferencia"), document.getString("ponente"), document.getString("foto"),document.getString("fecha"), document.getString("sala")));
                             }
                             onFirebaseLoadSuccess();
                         } else {
